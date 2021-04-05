@@ -1,4 +1,4 @@
-import { FastifyPlugin, FastifyReply, FastifyRequest } from 'fastify';
+import { FastifyPluginCallback, FastifyReply, FastifyRequest } from 'fastify';
 import { Input, InputObject } from 'into-stream';
 import { Stream } from 'stream';
 import { BrotliOptions, ZlibOptions } from 'zlib';
@@ -27,5 +27,5 @@ export interface FastifyCompressOptions {
   onInvalidRequestPayload?: (encoding: string, request: FastifyRequest, error: Error) => Error | undefined | null
 }
 
-declare const fastifyCompress: FastifyPlugin<FastifyCompressOptions>
+declare const fastifyCompress: FastifyPluginCallback<FastifyCompressOptions>
 export default fastifyCompress;
